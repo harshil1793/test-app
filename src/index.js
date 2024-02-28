@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import '@department-of-veterans-affairs/component-library/dist/main.css';
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from '@department-of-veterans-affairs/component-library';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -10,6 +15,10 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
